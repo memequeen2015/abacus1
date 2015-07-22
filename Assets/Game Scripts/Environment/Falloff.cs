@@ -1,15 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Falloff : MonoBehaviour {
+public class Falloff : MonoBehaviour
+{
+	public GameObject Player;
+	public GameObject Spawn;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Awake ()
+	{
+		Player = GameObject.FindGameObjectWithTag ("Player");
+		Spawn = GameObject.FindGameObjectWithTag ("Spawn");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnTriggerEnter(Collider c)
+	{
+		if (c.gameObject.tag == "Player")
+		{
+			Player.transform.position = Spawn.transform.position;
+		}
+	}
+
+	void Update ()
+	{
+		transform.Rotate (Vector3.up);
+		transform.Rotate (Vector3.down);
 	}
 }
