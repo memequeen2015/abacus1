@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
@@ -10,12 +10,12 @@ public class CameraFollow : MonoBehaviour {
 
 	void Start()
 	{
-		focusArea = new FocusArea (target.collider.bounds, focusAreaSize);
+		focusArea = new FocusArea (target.GetComponent<Collider>().bounds, focusAreaSize);
 	}
 
 	void LateUpdate()
 	{
-		focusArea.Update (target.collider.bounds);
+		focusArea.Update (target.GetComponent<Collider>().bounds);
 	}
 
 	void OnDrawGizmos() {
@@ -37,7 +37,7 @@ public class CameraFollow : MonoBehaviour {
 			bot = targetBounds.min.y;
 			top = targetBounds.min.y + size.y;
 
-			AudioVelocityUpdateMode = Vector2.zero;
+			velocity = Vector2.zero;
 			center = new Vector2((left + right) / 2, (top + bot) / 2);
 		}
 
@@ -66,3 +66,4 @@ public class CameraFollow : MonoBehaviour {
 		}
 	}
 }
+*/
